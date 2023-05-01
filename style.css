@@ -1,0 +1,170 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: fr-bold;
+    src: url(futurama/fr-bold.ttf);
+}
+
+/* ___Title and background___ */
+
+body {
+    background: linear-gradient(45deg, #3498DB 25%, #2980B9 0,#2980B9 50%,#3498DB 0%,#3498DB 75%,#2980B9 0);
+    background-size: 30px 30px;
+    /*background: #008ea0;
+    
+    background-image: url(img/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    */
+}
+
+.container__title {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.title {
+    height: 30%;
+    width: 30%;
+}
+
+/* ___Game container___ */
+
+.container__game {
+    position: relative;
+    height: 340px;
+    width: 680px;   
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-image: url(img/background.jpg);
+    border: solid 1px #FCEC26;
+    cursor: url("img/ship.cur"), url("img/ship.png"), url("img/ship.svg"), default;
+    overflow: hidden;
+    display: block;
+}
+
+
+.container__game:hover {
+    animation: stela 2s infinite linear;
+}
+
+@keyframes stela {
+    0%{
+        background-position-x: 0px;
+    }
+    100%{
+        background-position-x: 450px;
+    }
+}
+
+.meteor {
+    position: relative;
+    background-image: url(img/meteor.png);
+    background-size: 100% 100%;
+    transform: translateX(-100%);
+}
+
+.container__game:hover .meteor{
+    animation-name: meteor;
+    animation-iteration-count: infinite;
+}
+
+@keyframes meteor{
+    to {
+        left: 120%;
+    }
+}
+
+.meteor:nth-child(1) {
+    height: 100px;
+    width: 105px;
+    left: -10%;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(.27,.67,.55,.17);
+}
+
+.meteor:nth-child(2) {
+    height: 30px;
+    width: 35px;
+    left: -15%;
+    animation-duration: 1.3s;
+    animation-timing-function: ease-in-out;
+}
+
+.meteor:nth-child(3) {
+    height: 50px;
+    width: 55px;
+    left: -20%;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in;
+}
+
+.meteor:nth-child(4) {
+    height: 100px;
+    width: 105px;
+    left: -10%;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+}
+
+.meteor:nth-child(5) {
+    height: 60px;
+    width: 65px;
+    left: -40%;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+}
+
+/* ___Game instructions___ */
+
+.container__instruction {
+    font-size: 25px;
+    font-family: fr-bold;
+    text-align: center;
+    -webkit-text-stroke: .6px #fff;
+    cursor: url(http://falconmasters.com/img/cursor.gif); 
+}
+
+/* ___The End___ */
+
+.the_end {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    background: #000;
+    cursor: default;
+    display: none;
+}
+
+.the_end div {
+    position: absolute;
+    top: -5%;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%);
+}
+
+.meteorite:hover ~ .the_end{
+    display: block;
+}
+
+.the_end:hover {
+    display: block;
+}
+
+.the_end__h2 {
+    color: #fff;
+}
+
+.the_end__img{
+    width: 190px;
+    height: 140px;
+}
